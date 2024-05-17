@@ -1,0 +1,129 @@
+$green: #ace1af;
+$red: #d37676;
+$orange: #ffbe98;
+$dark: #374259;
+
+.directory.root {
+    height: 100vh;
+    max-height: 100vh;
+    overflow: auto;
+    padding: 0.5rem;
+    border-right: 1px solid $dark;
+    min-width: 320px;
+
+    .root-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 6px;
+        padding-bottom: 6px;
+        margin-bottom: 6px;
+        align-items: center;
+        border-bottom: 1px solid $dark;
+
+        span {
+            margin-right: auto;
+        }
+    }
+}
+
+button.action {
+    background-color: $green;
+    color: $dark;
+    border: none;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 28px;
+    cursor: pointer;
+
+    &.danger {
+        background-color: $red;
+    }
+}
+
+.input-wrapper {
+    height: 28px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    margin-bottom: 6px;
+    padding-left: 0.75rem;
+
+    input {
+        background-color: $dark;
+        border: none;
+        border-radius: 4px;
+        height: 100%;
+        padding-left: 0.5rem;
+        flex: 1;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $orange;
+            color: orange;
+        }
+    }
+}
+
+.directory-node {
+    border-radius: 6px;
+    padding: 0px 0.25rem;
+
+    &__body {
+        height: 28px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+        margin-bottom: 6px;
+
+        .actions {
+            margin-left: auto;
+            display: none;
+            gap: 6px;
+        }
+
+        .node-name {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        button.dir-toggle {
+            padding: 0;
+            background-color: transparent;
+            border: none;
+            color: $green;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 28px;
+            cursor: pointer;
+
+            &:disabled {
+                color: $red;
+                cursor: default;
+            }
+        }
+    }
+
+    &__children {
+        padding-left: 0.75rem;
+    }
+
+    &.flash {
+        animation: flash 0.75s linear;
+    }
+}
+
+@keyframes flash {
+    0% {
+        background-color: $green;
+    }
+
+    100% {
+        background-color: rgba($color: $green, $alpha: 0);
+    }
+}
