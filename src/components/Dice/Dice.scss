@@ -1,0 +1,21 @@
+img.dice {
+  border-radius: 8px;
+  transition: all 0.1s ease-in-out;
+  border: 1px solid lightgray;
+}
+
+.dice-roller {
+  max-width: 80px;
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  &.active {
+    background-color: rgba($color: green, $alpha: 0.2);
+  }
+  &.inactive {
+    background-color: rgba($color: red, $alpha: 0.2);
+  }
+}

@@ -1,0 +1,56 @@
+.board {
+  user-select: none;
+  flex: 1 1 auto;
+  position: relative;
+  border: 1px solid darkcyan;
+  background-color: darkcyan;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1px;
+  &__row {
+    display: flex;
+    flex: 1;
+    gap: 1px;
+    flex-direction: row-reverse;
+    &:nth-child(2n + 1) {
+      flex-direction: row;
+    }
+  }
+  &__cell {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0.5rem;
+    justify-content: space-between;
+    align-items: flex-end;
+    background-color: lightcyan;
+    color: darkcyan;
+    font-size: 20px;
+    font-weight: bold;
+    .player-chips {
+      display: flex;
+      gap: 4px;
+    }
+  }
+}
+
+.player-chip {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 2px solid #00000077;
+  &.red {
+    background-color: red;
+  }
+  &.blue {
+    background-color: blue;
+  }
+  &.yellow {
+    background-color: yellow;
+  }
+  &.green {
+    background-color: green;
+  }
+}
