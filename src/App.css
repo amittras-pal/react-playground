@@ -1,0 +1,38 @@
+#root {
+  /* margin: 0;
+  padding: 0;
+  box-sizing: border-box; */
+  display: flex;
+  height: 100vh;
+}
+.block {
+  flex: 1 1 auto;
+}
+iframe {
+  height: 100%;
+  width: 100%;
+  border: none;
+}
+.resizer {
+  height: 100vh;
+  width: 4px;
+  background-color: #1f6fbf;
+  transition: all 0.2s ease-in;
+  position: fixed;
+  cursor: pointer;
+  transform: translateX(-50%);
+  z-index: 200;
+}
+.resizer:hover {
+  background-color: #3d97f2;
+  width: 8px;
+}
+.drag-layer {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(5px);
+  z-index: 199;
+}
